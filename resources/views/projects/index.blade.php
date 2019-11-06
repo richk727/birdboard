@@ -1,21 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Birdboard</title>
-</head>
-<body>
-    <h1>Birdboard</h1>
-    <ul>
+@extends('layouts.app')
+
+@section('content')
+    <header class="flex items-center mb-3 py-4">
+        <div class="flex justify-between items-end w-full">
+            <h2 class="text-gray-700 text-sm font-normal">My Projects</h2>
+            <a href="/projects/create" class="button button--blue">Add Project</a>
+        </div>
+    </header>
+
+    <main class="lg:flex lg:flex-wrap -mx-3 px-1">
         @forelse ($projects as $project)
-            <li>
-                <a href="/projects/{{ $project->path() }}">{{ $project->title }}</a>
-            </li>
+            <div class="lg:w-1/3 px-3 pb-6">
+                @include ('projects.card')
+            </div>
         @empty 
-            <li>No projects available</li>
+            <div>No projects available yet!</siv>
         @endforelse
-    </ul>
-</body>
-</html>
+    </main>
+@endsection
