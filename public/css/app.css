@@ -11412,6 +11412,14 @@ video {
   transition: all 175ms ease-out;
 }
 
+.button.button--lg {
+  font-size: 1.125rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .button--blue {
   background-color: #47cdff;
   color: #fff;
@@ -11422,11 +11430,38 @@ video {
   background-color: #2b6cb0;
 }
 
+.button--blue.button--tertiary {
+  background-color: #fff;
+  color: #feb2b2;
+  box-shadow: none;
+  border: 1px solid #fff;
+}
+
+.button--blue.button--tertiary:hover {
+  color: #f56565;
+  border: 1px solid #f56565;
+}
+
 .card {
   background-color: #fff;
   padding: 1.25rem;
   border-radius: 0.5rem;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.08);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #a0aec0;
+}
+
+.invalid-feedback {
+  display: inline-block;
+  color: #fc8181;
+  padding: 0.25rem;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 @media (min-width: 640px){
