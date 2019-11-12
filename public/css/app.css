@@ -10948,6 +10948,10 @@ video {
   color: #702459;
 }
 
+.text-xxs{
+  font-size: 0.625rem;
+}
+
 .text-xs{
   font-size: 0.75rem;
 }
@@ -21786,6 +21790,10 @@ video {
     color: #702459;
   }
 
+  .sm\:text-xxs{
+    font-size: 0.625rem;
+  }
+
   .sm\:text-xs{
     font-size: 0.75rem;
   }
@@ -32560,6 +32568,10 @@ video {
 
   .md\:focus\:text-pink-900:focus{
     color: #702459;
+  }
+
+  .md\:text-xxs{
+    font-size: 0.625rem;
   }
 
   .md\:text-xs{
@@ -43338,6 +43350,10 @@ video {
     color: #702459;
   }
 
+  .lg\:text-xxs{
+    font-size: 0.625rem;
+  }
+
   .lg\:text-xs{
     font-size: 0.75rem;
   }
@@ -54112,6 +54128,10 @@ video {
 
   .xl\:focus\:text-pink-900:focus{
     color: #702459;
+  }
+
+  .xl\:text-xxs{
+    font-size: 0.625rem;
   }
 
   .xl\:text-xs{

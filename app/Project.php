@@ -28,4 +28,14 @@ class Project extends Model
     {
         return $this->tasks()->create(compact('body'));
     }
+
+    public function recordActivity($description)
+    {
+        $this->activity()->create(compact('description'));
+    }
+
+    public function activity()
+    {
+        return $this->hasMany(Activity::class)->latest();
+    }
 }
