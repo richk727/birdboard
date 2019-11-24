@@ -40,6 +40,13 @@ class ProjectsController extends Controller
         return view('projects.edit', compact('project'));
     }
 
+    /**
+     * Update the porject
+     * 
+     * @param Project $project
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
     public function update(Project $project)
     {        
         $this->authorize('update', $project);
@@ -51,6 +58,24 @@ class ProjectsController extends Controller
         return redirect($project->path());
     }
 
+    /**
+     * Delete a project
+     */
+
+    public function destroy(Project $project)
+    {
+        $this->authorize('update', $project);
+
+        $project->delete();
+        
+        return redirect('/projects');
+    }
+
+    /**
+     * Validate the request attributes
+     * 
+     * @return array
+     */
     protected function validateRequest()
     {
         return request()->validate([
