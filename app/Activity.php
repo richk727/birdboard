@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Activity extends Model
@@ -28,5 +29,25 @@ class Activity extends Model
     public function subject()
     {
         return $this->morphTo();
+    }
+
+    /**
+     * The user assigned to the activity
+     * 
+     * @return Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Get the users name
+     * 
+     * @return string
+     */
+    public function userName()
+    {
+        return $this->user->id === auth()->id() ? "You" : $this->user->name;
     }
 }
