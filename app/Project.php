@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Task;
+use App\User;
 use App\RecordsActivity;
 use Illuminate\Support\Arr;
 use Illuminate\Database\Eloquent\Model;
@@ -57,6 +58,19 @@ class Project extends Model
     public function addTask($body)
     {
         return $this->tasks()->create(compact('body'));
+    }
+
+    /**
+     * Invite a user to the project
+     */
+    public function invite(User $user)
+    {
+        return $this->members()->attach($user);
+    }
+
+    public function members()
+    {
+        return $this->belongsToMany(User::class, 'project_members')->withTimestamps();
     }
 
     /**
