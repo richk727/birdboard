@@ -65,26 +65,18 @@
 
                         <button class="button button--blue" type="submit">Save notes</button>
                     </form>
-                    @if ($errors->any)
-                        <div class="field mt-6">
-                            @foreach ($errors->all() as $error)
-                                <p class="p-2 text-white bg-red-500 mb-2">{{ $error }}</p>
-                            @endforeach 
-                        </div>
-                    @endif
+
+                    @include ('errors')
                 </div>
             </div>
+            
             <div class="lg:w-1/4 px-3">
                 @include ('projects.card')
                 @include ('projects.activity.card')
 
-                <form method="POST" action="{{ $project->path() }}">
-                    @method("DELETE")
-                    @csrf
-                    <button class="button button--red" type="submit">Delete Project</button>
-
-                
-                </form>
+                @can('manage', $project)
+                    @include ('projects.invite')
+                @endcan
             </div>
         </div>
     </main>
