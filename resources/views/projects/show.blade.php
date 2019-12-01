@@ -6,7 +6,22 @@
             <p class="text-gray-700 text-sm font-normal">
                 <a href="/projects">My Projects</a> / {{ $project->title }}
             </p>
-            <a href="{{ $project->path() }}/edit" class="button button--blue">Edit Project</a>
+            <div class="flex items-center">
+                @foreach ($project->members as $member)
+                    <img
+                        class="mr-3 rounded-full w-6"
+                        src="{{ gravatar_url($member->email) }}"
+                        alt="{{ $member->name }}'s avatar'"
+                        title="Shared with {{ $member->name }}">
+                @endforeach
+                <img
+                    class="mr-3 rounded-full w-6"
+                    src="{{ gravatar_url($project->owner->email) }}"
+                    alt="{{ $project->owner->name }}'s avatar'"
+                    title="Owned by {{ $project->owner->name }}">
+                <a href="{{ $project->path() }}/edit" class="button button--blue ml-3">Edit Project</a>
+            </div>
+            
         </div>
     </header>
     <main>
