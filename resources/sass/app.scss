@@ -31,7 +31,15 @@
     --default-text-700-color: #fff;
 
     --button--blue-bg-color: #184e5f;
-    --button--blue-shadow-color: #303838;
+    --button--blue-shadow-color: rgba(47, 53, 53, 0.3);
+}
+
+.border-accent {
+    border-color: var(--button--blue-bg-color);
+}
+
+.text-accent {
+    color: var(--button--blue-bg-color);
 }
 
 .button {
@@ -52,17 +60,13 @@
         @apply .bg-blue-700;
     }
 
-    &.button--tertiary {
-        @apply .bg-white .text-red-300;
-        box-shadow: none;
-        border: 1px solid #fff;
+    &.is-outlined {
+        @apply .bg-card .border .border-accent .text-accent;
 
         &:hover {
-            color: theme('colors.red.500');
-            border: 1px solid theme('colors.red.500');
+            @apply .text-white;
+            @apply .bg-blue-700;
         }
-        
-
     }
 }
 

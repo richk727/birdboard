@@ -18,7 +18,7 @@
 
 <div class="flex justify-between items-center">
     <button class="button button--blue button--lg" type="submit">{{ $buttonText }}</button>
-    <div><a class="button button--blue button--tertiary"href="{{ $project->path() }}">Cancel</a></div>
+    <div><a class="button button--blue is-outlined"href="{{ $project->path() }}">Cancel</a></div>
 </div>
 @if ($errors->any)
 <div class="field mt-6">

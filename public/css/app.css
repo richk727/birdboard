@@ -11778,7 +11778,15 @@ video {
   --default-text-500-color: #ccc;
   --default-text-700-color: #fff;
   --button--blue-bg-color: #184e5f;
-  --button--blue-shadow-color: #303838;
+  --button--blue-shadow-color: rgba(47, 53, 53, 0.3);
+}
+
+.border-accent {
+  border-color: var(--button--blue-bg-color);
+}
+
+.text-accent {
+  color: var(--button--blue-bg-color);
 }
 
 .button {
@@ -11810,16 +11818,16 @@ video {
   background-color: #2b6cb0;
 }
 
-.button--blue.button--tertiary {
-  background-color: #fff;
-  color: #feb2b2;
-  box-shadow: none;
-  border: 1px solid #fff;
+.button--blue.is-outlined {
+  background-color: var(--card-background-color);
+  border-width: 1px;
+  border-color: var(--button--blue-bg-color);
+  color: var(--button--blue-bg-color);
 }
 
-.button--blue.button--tertiary:hover {
-  color: #f56565;
-  border: 1px solid #f56565;
+.button--blue.is-outlined:hover {
+  color: #fff;
+  background-color: #2b6cb0;
 }
 
 .card {
