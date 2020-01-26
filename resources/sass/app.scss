@@ -8,6 +8,32 @@
 
 @tailwind utilities;
 
+
+.theme-light {
+    --page-background-color: #edf2f7;
+    --card-background-color:    #ffffff;
+    --header-background-color: #ffffff;
+
+    --default-text-500-color: #a0aec0;
+    --default-text-700-color: #4a5568;
+
+    --button--blue-bg-color: #47cdff;
+    --button--blue-shadow-color: #b0eaff;
+}
+
+.theme-dark {
+    --page-background-color: #17171e;
+    --card-background-color:    #1f2027;
+    --header-background-color: #1f2027;
+
+    --default-text-500-color: #ccc;
+
+    --default-text-700-color: #fff;
+
+    --button--blue-bg-color: #184e5f;
+    --button--blue-shadow-color: #303838;
+}
+
 .button {
     @apply  .rounded-lg .text-sm .py-2 .px-5;
     transition: all 175ms ease-out;
@@ -18,8 +44,9 @@
 }
 
 .button--blue {
-    @apply .bg-blue-500 .text-white;
-    box-shadow: 0 2px 7px 0 #b0eaff;
+    @apply .text-white;
+    box-shadow: 0 2px 7px 0 var(--button--blue-shadow-color);
+    background-color: var(--button--blue-bg-color);
 
     &:hover {
         @apply .bg-blue-700;
@@ -40,7 +67,8 @@
 }
 
 .card {
-    @apply .bg-white .p-5 .rounded-lg .shadow
+    @apply .bg-card .p-5 .rounded-lg .shadow;
+    color: var(--default-text-700-color);
 }
 
 .form-control {
@@ -52,3 +80,4 @@
     display: inline-block;
     @apply .text-red-400 .p-1 .text-center .mb-4;
 }
+

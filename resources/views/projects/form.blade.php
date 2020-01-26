@@ -1,7 +1,7 @@
 <div>
     <label for="title">Title</label>
     <input
-        class="form-control"
+        class="form-control bg-card text-default-700"
         type="text"
         name="title"
         placeholder="My next awesome project"
@@ -10,7 +10,7 @@
 <div>
     <label for="description">Description</label>
     <textarea
-        class="form-control"
+        class="form-control bg-card text-default-700"
         name="description"
         rows="5"
         placeholder="A breif overview of the project">{{ $project->description }}</textarea>

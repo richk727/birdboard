@@ -10,6 +10,19 @@ module.exports = {
       xl: '1280px',
     },
     colors: {
+      
+      default: 'var(--default-text-color)',
+      default: {
+        500: 'var(--default-text-500-color)',
+        700: 'var(--default-text-700-color)'
+      },
+
+      page: 'var(--page-background-color)',
+      card: 'var(--card-background-color)',
+      header: 'var(--header-background-color)',
+      
+      
+
       transparent: 'transparent',
 
       black: '#000',
