@@ -26,12 +26,28 @@ class ProjectsController extends Controller
         return view('projects.create');
     }
 
+    /**
+     * Persist a new project.
+     * 
+     * @returns mixed 
+     */
     public function store()
     {
         $attributes = $this->validateRequest();
 
         $project = auth()->user()->projects()->create($attributes);
         
+        if(request()->has('tasks')) {
+            $project->addTasks(request('tasks'));
+            // foreach(request('tasks') as $task) {
+            //     $project->addTask($task['body']);
+            // }
+        }
+
+        if(request()->wantsJson()) {
+            return ['message' =>$project->path()];
+        }
+
         return redirect($project->path());
     }
 

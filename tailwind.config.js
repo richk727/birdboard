@@ -21,13 +21,12 @@ module.exports = {
       card: 'var(--card-background-color)',
       header: 'var(--header-background-color)',
       
-      
+      error: 'var(--text-error-color)',
 
       transparent: 'transparent',
 
       black: '#000',
-      white: '#fff',
-
+      white: '#fff',      
       gray: {
         100: '#f7fafc',
         200: '#edf2f7',
