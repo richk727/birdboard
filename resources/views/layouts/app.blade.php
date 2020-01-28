@@ -49,37 +49,34 @@
                         <div class="flex items-center ml-auto">
                             <!-- Authentication Links -->
                             @guest
-                                    <a class="nav-link text-default-500" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link text-default-700" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 @if (Route::has('register'))
-                                    <a class="nav-link text-default-500" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link text-default-700" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 @endif
                             @else
                                 <theme-switcher></theme-switcher>                               
 
-                                <a id="navbarDropdown"
-                                    class="flex items-center text-default-500 text-sm"
-                                    href="#" role="button"
-                                    data-toggle="dropdown"
-                                    aria-haspopup="true"
-                                    aria-expanded="false"
-                                    v-pre>
-                                    <img width="35"
-                                        class="rounded mr-3"
-                                        src="{{ gravatar_url(auth()->user()->email) }}">
-                                    {{ Auth::user()->name }} 
-                                </a>
-
-                                {{-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item text-default-500" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div> --}}
+                                <dropdown align="right" width="100px">
+                                    <template v-slot:trigger>
+                                        <button id="navbarDropdown"
+                                            class="flex items-center text-default-700 text-sm"
+                                            type="button">
+                                            <img width="35"
+                                                class="rounded mr-3"
+                                                src="{{ gravatar_url(auth()->user()->email) }}">
+                                            {{ Auth::user()->name }} 
+                                        </button>
+                                    </template>
+                                    <template v-slot:default>
+                                        <form id="logout-form" method="POST" action="/logout">
+                                            @csrf
+    
+                                            <button type="submit" class="dropdown-menu-link">Logout</button>
+                                        </form>
+                                    </template>
+                    
+                                </dropdown>
+                                
                             @endguest
                             </div>
                     </div>

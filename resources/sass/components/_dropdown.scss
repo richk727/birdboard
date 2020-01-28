@@ -1,0 +1,23 @@
+.dropdown-toggle {
+    > button:focus {
+        outline: 0;
+    }
+    button {
+        transition: all 225ms ease-in-out;
+
+        &:focus,
+        &:hover {
+            opacity: 0.8;
+            color: var(--button--blue-bg-color);
+        }
+    }
+}
+
+.dropdown-menu__link {
+    @apply .block .text-default-700 .no-underline .leading-loose .px-4;
+    transition: all 225ms ease-in-out;
+
+    &:hover {
+        @apply .text-default-500;
+    }
+}
